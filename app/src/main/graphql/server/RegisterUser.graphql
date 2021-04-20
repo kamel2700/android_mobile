@@ -1,0 +1,9 @@
+mutation RegisterUser($nickname:String!) {
+
+    registerUser(user:{
+        nickname: $nickname
+    }) {
+        id
+
+    }
+}

@@ -1,0 +1,10 @@
+mutation MockSignIn($email:String!) {
+    mockSignIn(email:$email) {
+        accessToken
+        user {
+            isRegistered
+
+
+        }
+    }
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav"
+            app:startDestination="@id/login_fragment">
+
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.example.rocketreserver.LoginFragment"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/open_launchListFragment"
+            app:destination="@id/launchListFragment" />
+        <action
+            android:id="@+id/open_registerFragment"
+            app:destination="@id/register_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/launchListFragment"
+        android:name="com.example.rocketreserver.LaunchListFragment"
+        tools:layout="@layout/launch_list_fragment">
+        <action
+            android:id="@+id/openLaunchDetails"
+            app:destination="@id/launch_details_fragment" />
+        <action
+            android:id="@+id/openJokeCreation"
+            app:destination="@id/create_joke"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/launch_details_fragment"
+        android:name="com.example.rocketreserver.LaunchDetailsFragment"
+        tools:layout="@layout/launch_details_fragment">
+        <argument
+            android:name="audioUrl"
+            app:argType="string" />
+        <argument
+            android:name="text"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            app:destination="@id/launchListFragment"
+            android:id="@+id/onBack_launchListFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/register_fragment"
+        android:name="com.example.rocketreserver.RegisterFragment"
+        tools:layout="@layout/register_fragment">
+        <action
+            android:id="@+id/open2_launchListFragment"
+            app:destination="@id/launchListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/create_joke"
+        android:name="com.example.rocketreserver.CreateJokeFragment"
+        tools:layout="@layout/createjoke_fragment">
+        <action
+            android:id="@+id/open3_launchListFragment"
+            app:destination="@id/launchListFragment" />
+    </fragment>
+
+</navigation>

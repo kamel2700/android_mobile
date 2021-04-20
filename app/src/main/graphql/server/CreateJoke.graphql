@@ -1,0 +1,7 @@
+mutation CreateJoke($text:String!) {
+    createJoke(joke: {
+        text : $text
+    }) {
+        id
+    }
+}

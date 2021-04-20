@@ -1,0 +1,16 @@
+query User{
+    user {
+        publishedJokes(pagedArray: {
+            page : 0
+            perPage : 10
+        }) {
+            totalAmount
+            totalPages
+            data {
+                id
+                text
+                audioUrl
+            }
+        }
+    }
+}
